@@ -1,0 +1,12 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     - checkout
+     # build the application image
+     - run: docker build -t edbordin/summon-fpga-tools:$CIRCLE_BRANCH .
+     - run: |
+         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+     # deploy the image
+     - run: docker push edbordin/summon-fpga-tools:$CIRCLE_BRANCH
