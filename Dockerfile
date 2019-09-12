@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git mercurial b
                      libmpfr-dev libncurses5-dev libmpc-dev \
                      libreadline-dev zlib1g-dev pkg-config python \
                      python3 python3-dev tcl-dev autoconf gperf \
-                     qtbase5-dev libqt5opengl5-dev
+                     qtbase5-dev libqt5opengl5-dev ca-certificates
 
 RUN git clone https://github.com/esden/summon-fpga-tools.git
 WORKDIR summon-fpga-tools
