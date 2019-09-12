@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-RUN apt-get update && apt-get install git mercurial build-essential bison clang cmake \
+RUN apt-get update && apt-get install -y --no-install-recommends git mercurial build-essential bison clang cmake \
                      flex gawk graphviz xdot libboost-all-dev \
                      libeigen3-dev libffi-dev libftdi-dev libgmp3-dev \
                      libmpfr-dev libncurses5-dev libmpc-dev \
