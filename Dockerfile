@@ -1,6 +1,6 @@
 FROM ubuntu:xenial
 
-COPY summon-fpga-tools.sh ./
+# COPY summon-fpga-tools.sh ./
 
 RUN apt-get update && apt-get install -y --no-install-recommends git mercurial build-essential bison clang cmake \
                      flex gawk graphviz xdot libboost-all-dev \
@@ -10,8 +10,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends git mercurial b
                      python3 python3-dev tcl-dev autoconf gperf \
                      qtbase5-dev libqt5opengl5-dev ca-certificates
 
-# RUN git clone https://github.com/esden/summon-fpga-tools.git
-# WORKDIR summon-fpga-tools
+RUN git clone https://github.com/edbordin/summon-fpga-tools.git
+WORKDIR summon-fpga-tools
 
-RUN bash summon-fpga-tools.sh
+RUN bash summon-fpga-tools.sh ICESTORM_EN=0 PRJTRELLIS_EN=0 ARACHNEPNR_EN=0 NEXTPNR_ICE40_EN=0 NEXTPNR_ECP5_EN=0 YOSYS_EN=0
 ENV PATH "/root/sft/bin:$PATH"
