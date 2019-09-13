@@ -13,5 +13,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends git mercurial b
 RUN git clone https://github.com/edbordin/summon-fpga-tools.git
 WORKDIR summon-fpga-tools
 
-RUN bash summon-fpga-tools.sh ICESTORM_EN=0 PRJTRELLIS_EN=0 ARACHNEPNR_EN=0 NEXTPNR_ICE40_EN=0 NEXTPNR_ECP5_EN=0 YOSYS_EN=0
+RUN bash ICESTORM_EN=0 PRJTRELLIS_EN=0 ARACHNEPNR_EN=0 NEXTPNR_ICE40_EN=0 NEXTPNR_ECP5_EN=0 YOSYS_EN=0 summon-fpga-tools.sh
 ENV PATH "/root/sft/bin:$PATH"
