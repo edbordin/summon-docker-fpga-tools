@@ -11,5 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git mercurial b
 RUN git clone https://github.com/edbordin/summon-fpga-tools.git
 WORKDIR summon-fpga-tools
 
+# this should compile yosys with debug symbols
+ENV ENABLE_DEBUG "1"
 RUN bash summon-fpga-tools.sh
 ENV PATH "/root/sft/bin:$PATH"
