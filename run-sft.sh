@@ -17,8 +17,19 @@ export LANGUAGE=en_US:en
 export LC_ALL=en_US.UTF-8
 
 mkdir -p ~/sft/bin
-git clone https://github.com/universal-ctags/ctags.git && cd ctags && ./autogen.sh && ./configure --prefix=~/sft && make && make install
-git clone https://github.com/thomasrussellmurphy/istyle-verilog-formatter.git && cd istyle-verilog-formatter && make && cp bin/release/iStyle ~/sft/bin
+git clone https://github.com/universal-ctags/ctags.git
+pushd ctags
+autogen.sh
+./configure --prefix=~/sft
+make
+make install
+popd
+
+git clone https://github.com/thomasrussellmurphy/istyle-verilog-formatter.git
+pushd istyle-verilog-formatter
+make
+cp bin/release/iStyle ~/sft/bin
+popd
 
 git clone https://github.com/esden/summon-fpga-tools.git
 pushd summon-fpga-tools
