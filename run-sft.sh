@@ -19,7 +19,7 @@ export LC_ALL=en_US.UTF-8
 mkdir -p ~/sft/bin
 git clone https://github.com/universal-ctags/ctags.git
 pushd ctags
-autogen.sh
+./autogen.sh
 ./configure --prefix=~/sft
 make
 make install
