@@ -20,7 +20,7 @@ mkdir -p ~/sft/bin
 git clone https://github.com/universal-ctags/ctags.git
 pushd ctags
 ./autogen.sh
-./configure --prefix=~/sft
+./configure --prefix=$HOME/sft
 make
 make install
 popd
@@ -28,7 +28,7 @@ popd
 git clone https://github.com/thomasrussellmurphy/istyle-verilog-formatter.git
 pushd istyle-verilog-formatter
 make
-cp bin/release/iStyle ~/sft/bin
+cp bin/release/iStyle $HOME/sft/bin
 popd
 
 git clone https://github.com/esden/summon-fpga-tools.git
