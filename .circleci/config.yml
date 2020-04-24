@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
       - image: ubuntu:xenial
-    machine: true
     steps:
       - checkout
       # # build the application image
